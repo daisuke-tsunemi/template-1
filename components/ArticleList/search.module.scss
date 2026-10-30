@@ -1,0 +1,28 @@
+@use "../../_variables" as *;
+
+.search {
+  padding-inline-start: 3rem;
+  margin: 0;
+  background: white url('/icon/search.svg') no-repeat 1rem center;
+  max-width: 20rem;
+  flex: auto;
+  @include respond-md{
+    width: 20rem;
+  }
+  &__radio{
+    label{
+      font-size: .75rem;
+      font-weight: 500;
+      border: var(--border) 1px solid;
+      padding:.125rem .5rem;
+      border-radius: .25rem;
+      background-color: var(--bg-light);
+      &:has(input[type="radio"]:checked){
+        font-weight: 700;
+        color: var(--primary-dark);
+        border-color: var(--primary-dark);
+      }
+    }
+  }
+}
+

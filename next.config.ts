@@ -6,6 +6,10 @@ const nextConfig: NextConfig = {
     agentFeedback: true,
   },
   cacheComponents: true,
+  // microCMSのキャッシュ: 1日1回再生成（旧 revalidate = 86400 相当）
+  cacheLife: {
+    daily: { stale: 300, revalidate: 86400, expire: 604800 },
+  },
   partialPrefetching: true,
   turbopack: {
     rules: {

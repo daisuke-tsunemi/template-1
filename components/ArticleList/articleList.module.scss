@@ -1,0 +1,74 @@
+@use "../../_variables" as *;
+
+.article{
+  &__none{
+    padding: 10vw 10dvh;
+    background-color: var(--gray300);
+    text-align: center;
+  }
+  &__list{
+    margin-inline: auto;
+    display: grid;
+    gap: .5rem;
+    max-width: 40rem;
+    @include respond-sm{
+      max-width: inherit;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+  &__item{
+    background: #444;
+    border: var(--border) 1px solid;
+    display:block;
+    border-radius: .5rem;
+    overflow: hidden;
+    @include respond-md{
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: 2fr 3fr;
+      transition: all 0.2s;
+    }
+    &:hover{
+      @include respond-md{
+        border-color: var(--primary-light);
+        transform: rotate(-2deg);
+        h3{
+          color: var(--primary-light);
+        }
+      }
+    }
+    &Text{
+      padding:.5rem;
+      @include respond-md{
+        padding:.75rem 1rem .75rem 0;
+      }
+    }
+    &Title{
+      overflow: hidden;
+      display: -webkit-box;
+      text-overflow: ellipsis;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      color: #eee;
+    }
+    img{
+      display:block;
+      height: auto;
+      width: 100%;
+      object-fit: cover;
+      max-height: 7.5rem;
+    }
+  }
+}
+.time{
+  color: #ccc;
+  font-size: .75rem;
+}
+.tag{
+  background-color: #ddd;
+  padding: .125rem .5rem;
+  border-radius: .25rem;
+  border: var(--border-dark) 1px solid;
+  color: #222;
+}

@@ -1,0 +1,14 @@
+
+.scrollTop {
+  opacity: 0;
+  transition: opacity 0.5s;
+  &.show {
+    opacity: 1;
+  }
+  &__btn{
+    min-width: 1;
+    padding: 0;
+    border-radius: 50%;
+    height: auto;
+  }
+}
